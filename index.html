@@ -12,66 +12,65 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h1 class="display-4">Train Schedules & Timetables</h1>
-      <p class="lead">A CONNECTION THAT'S PART OF THE ADVENTURE.</p>
-    </div>
-
-    <table class="table border mt-2">
-      <span class="d-block p-2 bg-light text-black border">
-        <h6>Current Schedule</h6>
-      </span>
-      <tr>
-        <th scope="col">
-          <h6>Train Line</h6>
-        </th>
-        <th scope="col">
-          <h6>Destination</h6>
-        </th>
-        <th scope="col">
-          <h6>Frequency (min)</h6>
-        </th>
-        <th scope="col">
-          <h6>Next Arrival</h6>
-        </th>
-        <th scope="col">
-          <h6>Minutes Away</h6>
-        </th>
-      </tr>
-      </thead>
-    </table>
-
-    <form>
-      <span class="d-block p-2 bg-light text-black border">
-        <h6>Add Train</h6>
-      </span>
-      <div class="container border mt-2">
-
-        <div class="form-row mt-2">
-          <div class="form-group col-md-12">
-            <label for="inputtrainLine">Train Line</label>
-            <input type="text" class="form-control" id="trainLine" placeholder="Train Line ">
-          </div>
-          <div class="form-group col-md-12">
-            <label for="inputDestination">Destination</label>
-            <input type="text" class="form-control" id="destination" placeholder="Destination">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputFirstTrainTime">First Train Time (HH:mm - Military Time)</label>
-          <input type="text" class="form-control" id="firstTrainTime" placeholder="23:59">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <label for="frequency">Frequency (min)</label>
-            <input type="text" class="form-control" id="frequency" placeholder="1">
-          </div>
-          <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
-    </form>
-  </div>
-
-  </div>
+  <div class="container bg-primary text-white py-3 mb-3">
+		<div class="row">
+			<div class="col-lg-7 col-md-8 col-sm-12 text-center pt-4">
+						<h1>Train Schedules & Timetables</h1>
+						<p class="lead">A CONNECTION THAT'S PART OF THE ADVENTURE.</p>
+						<h4>Current Time: <span id="timer"></span></h4>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 text-center pt-2">
+						<img src="assets/images/images.jpeg" alt="Orange Train" height="85%">
+					</div>
+		</div>
+	</div>
+	<div class="container px-0">
+		<div class="card mb-3">
+			<h5 class="card-header rounded-0 bg-primary text-white md-5">Current Train Schedule</h5>
+			<div class="card-body">
+			<table class="table table-hover" id="train-table">
+				<thead>
+					<tr>
+						<!-- <th scope="col">Delete</th> -->
+						<th scope="col">Train Name</th>
+						<th scope="col">Desitination</th>
+						<th scope="col">Frequency (min)</th>
+						<th scope="col">Next Arrival</th>
+						<th scope="col">Minutes Away</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+	<div class="container px-0">
+		<div class="card mb-3">
+			<h5 class="card-header  rounded-0 text-white bg-primary">Add New Train Information</h5>
+			<div class="card-body">
+				<form>
+					<div class="form-group">
+					<label for="trainname-input" class= "font-weight-bold">Train Name</label>
+					<input type="text" class="form-control" id="trainname-input" aria-describedby="emailHelp">
+					</div>
+					<div class="form-group">
+					<label for="destination-input" class= "font-weight-bold">Destination</label>
+					<input type="text" class="form-control" id="destination-input">
+					</div>
+					<div class="form-group">
+					<label for="firsttime-input" class= "font-weight-bold">First Train Time (HH:mm - military time)</label>
+					<input data-format=" hh:mm" type="text" class="form-control" id="firsttime-input">
+					</div>
+					<div class="form-group">
+					<label for="frequency-input" class= "font-weight-bold">Frequency (min)</label>
+					<input type="number" class="form-control" id="frequency-input">
+					</div>
+					<button type="submit" class="btn btn-primary rounded-0 " id="add-train">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
